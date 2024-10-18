@@ -7,4 +7,6 @@ urlpatterns = [
     path('eventos/', eventos, name='eventos'),
      path('listaong/', listaong, name='listaong'),
      path('cetificado/', certificado, name='certificado'),
+     path('registro/', registro, name='registro'),
+     path('userIndex/', userIndex, name='userIndex'),
 ]

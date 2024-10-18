@@ -31,7 +31,7 @@ h3 {
 body {
   font-family: "poppins", sans-serif;
   color: #101010;
-  background-color: #ffffff;
+  background-color: wheat;
 }
 
 .layout_padding {
@@ -60,6 +60,9 @@ body {
 
 .custom_heading {
   position: relative;
+}
+.custom_heading h2´ {
+   color: #0f0f0f;
 }
 
 .custom_heading::before {
@@ -215,14 +218,19 @@ a:focus {
           justify-content: space-between;
   width: 85%;
   margin: 0 auto;
+  color: #0f0f0f;
 }
+
+.hero_section h3 {
+  color: #0f0f0f;
+} 
 
 .hero_section .hero_btn-box a {
   display: inline-block;
   padding: 12px 55px;
   background-color: transparent;
-  border: 1.5px solid #ffffff;
-  color: #ffffff;
+  border: 1.5px solid #0f0f0f;
+  color: #0f0f0f;
   margin-top: 55px;
   text-transform: uppercase;
 }
@@ -318,7 +326,7 @@ a:focus {
 
 .contact_section {
   color: #fff;
-  background: url(../images/hombre-anonimo-subiendo-manos-al-cielo-nublado.jpg);
+  background: url(../images/bosque-desde-cielo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -532,6 +540,22 @@ a:focus {
 }
 
 /* footer section*/
+
+.footerInfoItems{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 32px;
+  margin-right: 30px;
+  
+}
+
+.footerInfoItems p {  
+  display: flex;
+  color: #ffffff;
+  margin-left: -25px;
+  text-align: center;
+}
 .footer_section {
   background-color: #ffffff;
   padding: 20px;
