@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  {% include 'core/header.html' %}
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- end header section -->
+    </div>
+    <!-- end hero area -->
+
+    <div class="login-container">
+      <h2>Login Administrador</h2>
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" href="{url 'adminIndex'}">
+        </ion-card>Ingresar</button>
+      </form>
+    </div>
+
+    {% include 'core/footer.html' %}
+  </body>
+</html>

@@ -83,6 +83,12 @@ body {
   background-attachment: fixed;
 }
 
+.header_section {
+  background-size: cover;
+  background-position: center;
+}
+
+
 .sub_page .hero_area {
   height: auto;
 }

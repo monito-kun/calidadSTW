@@ -13,4 +13,9 @@ def registro(request):
     return render(request, 'core/registro.html')
 def userIndex(request):  
     return render(request, 'core/userIndex.html')
+def loginAdmin(request):  
+    return render(request, 'core/loginAdmin.html')
+def indexAdmin(request):  
+    return render(request, 'core/indexAdmin.html')
+
 # Create your views here.

@@ -9,4 +9,6 @@ urlpatterns = [
      path('cetificado/', certificado, name='certificado'),
      path('registro/', registro, name='registro'),
      path('userIndex/', userIndex, name='userIndex'),
+     path('lodinAdmin/', loginAdmin, name='loginAdmin'),
+     path('indexAdmin/', indexAdmin, name='indexAdmin'),
 ]

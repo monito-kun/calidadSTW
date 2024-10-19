@@ -21,11 +21,14 @@
           <label for="password">Contraseña</label>
           <input type="password" id="password" name="password" required />
         </div>
-        <button type="submit">Ingresar</button>
+        <button type="submit" href="{url 'userIndex'}">
+        </ion-card>Ingresar</button>
         <a href="{% url 'registro' %}">¿No posee usuario? Registrese aqui.</a>
+        <br>
+        <a href="{% url 'loginAdmin' %}">Soy administrador</a>
+
       </form>
     </div>
 
-    {% include 'core/footer.html' %}
   </body>
 </html>

@@ -75,45 +75,5 @@
   </header>
 
   <!--CUERPO-->
-  <div class="calculadora">
-    <div>
-      <h1>Calculadora de CO2</h1>
-      <label for="personas">Número de personas:</label>
-      <input type="number" id="personas" placeholder="Ej: 10" required />
-
-      <label for="dias">Días:</label>
-      <input type="number" id="dias" placeholder="Ej: 5" required />
-
-      <button id="calcular">Calcular CO2</button>
-
-      <h2 id="resultado"></h2>
-    </div>
-
-    <script src="{% static 'js/script.js' %}"></script>
-  </div>
-
-  <div class="generarCertificado">
-    <h1>Generar Certificado</h1>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" placeholder="Ej: Juan Perez" required />
-    <label for="email">Email:</label>
-    <input
-      type="text"
-      id="email"
-      placeholder="Ej: juan.peres@planeta.cl"
-      required
-    />
-    <button id="generarReporte">Generar Reporte</button>
-
-    <script>
-      document
-        .getElementById("generarReporte")
-        .addEventListener("click", function () {
-          // Lógica para generar el reporte
-          alert("Reporte generado");
-        });
-    </script>
-  </div>
-
-  {% include 'core/footer.html' %}
+  <h1>EVENTOS CREADOS</h1>
 </body>
