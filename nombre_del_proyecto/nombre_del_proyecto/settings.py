@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'crispy_forms',
+    'crispy_bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK= 'bootstrap4'
+# Asegúrate de que estas configuraciones estén presentes en tu archivo settings.py
+LOGIN_URL = '/accounts/login/'  # Nombre de la URL de inicio de sesión
+LOGIN_REDIRECT_URL = 'index'  # Redirigir a la página principal después de iniciar sesión
+LOGOUT_REDIRECT_URL = 'index'  # Redirigir a la página principal después de cerrar sesión

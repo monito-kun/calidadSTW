@@ -10,37 +10,56 @@
     <!-- end header section -->
   </div>
   <!-- end hero area -->
+  <title>Listas de ONG</title>
+  
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      .table th, .table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+      }
+      .table th {
+          background-color: #f2f2f2;
+          text-align: left;
+      }
+  </style>
 
-  <h1 class="a">Listas de ONG</h1> <!-- Corregido el cierre de la etiqueta h1 -->
-
+  <h1 class="a">Listas de ONG</h1>
   <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
+      <thead>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Tamaño</th>
+              <th scope="col">Duración</th>
+              <th scope="col">Tipo de Actividades</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for evento in eventos %}
+          <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ evento.nombre }}</td>
+              <td>{{ evento.fecha }}</td>
+              <td>{{ evento.descripcion }}</td>
+              <td>{{ evento.tamano }}</td>
+              <td>{{ evento.duracion }}</td>
+              <td>{{ evento.tipo_actividades }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+              <td colspan="7">No hay eventos disponibles.</td>
+          </tr>
+          {% endfor %}
+      </tbody>
   </table>
 
   <!-- end about section -->

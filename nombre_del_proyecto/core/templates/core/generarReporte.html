@@ -1,0 +1,16 @@
+</head>
+
+<body>
+    {% include 'core/header.html' %}
+
+    <!-- Content Section -->
+    <h2 class="section-title-upload">Subir un nuevo caso</h2>
+    <form method="post" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subir caso</button>
+    </form>
+    
+
+    {% include 'core/footer.html' %}
+<body>

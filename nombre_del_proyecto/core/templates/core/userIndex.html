@@ -1,6 +1,7 @@
 {% load static %}
 
 <head>
+  {% include 'core/header.html' %}
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -103,17 +104,31 @@
       placeholder="Ej: juan.peres@planeta.cl"
       required
     />
-    <button id="generarReporte">Generar Reporte</button>
-
+    <title>Documentos en Proceso</title>
     <script>
-      document
-        .getElementById("generarReporte")
-        .addEventListener("click", function () {
-          // Lógica para generar el reporte
-          alert("Reporte generado");
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("generarReporte").addEventListener("click", function() {
+                const reporteContainer = document.getElementById("reporteContainer");
+                const newContent = `
+                    <h1> documentos en procesos </h1>
+                    <ul>
+                        {% for document in Documentos %}
+                        <li>
+                            {{ document.codigo }} {{ document.nombre_caso }}
+                            <a href="{{ document.archivo.url }}" download="{{ document.archivo }}">{{ document.archivo.name }}</a>
+                        </li>
+                        {% empty %}
+                        <li>No hay documentos subidos aún.</li>
+                        {% endfor %}
+                    </ul>
+                `;
+                reporteContainer.innerHTML = newContent;
+            });
         });
     </script>
-  </div>
-
-  {% include 'core/footer.html' %}
+</head>
+<body>
+    <button id="generarReporte">Generar Reporte</button>
+    <div id="reporteContainer"></div>
+    {% include 'core/footer.html' %}
 </body>

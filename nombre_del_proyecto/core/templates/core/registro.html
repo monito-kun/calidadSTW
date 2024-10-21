@@ -77,69 +77,67 @@
       </div>
     </header>
 
-    <div class="registroContainer">
-      <h2>Crear una cuenta</h2>
-      <form action="{% url 'registro' %}" method="post">
-        {% csrf_token %}
-        <div class="form-group">
+  <!-- eventos/templates/eventos/registro.html -->
+
+<div class="registroContainer">
+  <h2>Crear una cuenta</h2>
+  <form action="{% url 'registro' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
           <label for="username">Nombre de usuario:</label>
           <input
-            type="text"
-            id="username"
-            name="username"
-            required
-            pattern="^[a-zA-Z0-9_]{3,15}$"
-            title="El nombre de usuario debe tener entre 3 y 15 caracteres y solo puede contener letras, números y guiones bajos."
+              type="text"
+              id="username"
+              name="username"
+              required
+              pattern="^[a-zA-Z0-9_]{3,15}$"
+              title="El nombre de usuario debe tener entre 3 y 15 caracteres y solo puede contener letras, números y guiones bajos."
           />
-        </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group">
           <label for="email">Correo electrónico:</label>
           <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group">
           <label for="password1">Contraseña:</label>
           <input
-            type="password"
-            id="password1"
-            name="password1"
-            required
-            pattern=".{8,}"
-            title="La contraseña debe tener al menos 8 caracteres."
+              type="password"
+              id="password1"
+              name="password1"
+              required
+              pattern=".{8,}"
+              title="La contraseña debe tener al menos 8 caracteres."
           />
-        </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group">
           <label for="password2">Confirmar contraseña:</label>
           <input
-            type="password"
-            id="password2"
-            name="password2"
-            required
-            pattern=".{8,}"
-            title="La contraseña debe tener al menos 8 caracteres."
-            oninput="checkPasswordMatch()"
+              type="password"
+              id="password2"
+              name="password2"
+              required
+              pattern=".{8,}"
+              title="La contraseña debe tener al menos 8 caracteres."
+              oninput="checkPasswordMatch()"
           />
-        </div>
-        <div id="password-match-message" style="color: red; display: none;">
+      </div>
+      <div id="password-match-message" style="color: red; display: none;">
           Las contraseñas no coinciden.
-        </div>
-        <script>
+      </div>
+      <script>
           function checkPasswordMatch() {
-            const password1 = document.getElementById('password1').value;
-            const password2 = document.getElementById('password2').value;
-            const message = document.getElementById('password-match-message');
-            if (password1 !== password2) {
-              message.style.display = 'block';
-            } else {
-              message.style.display = 'none';
-            }
+              const password1 = document.getElementById('password1').value;
+              const password2 = document.getElementById('password2').value;
+              const message = document.getElementById('password-match-message');
+              if (password1 !== password2) {
+                  message.style.display = 'block';
+              } else {
+                  message.style.display = 'none';
+              }
           }
-        </script>
-        </div>
-        <button type="submit">Registrarse</button>
-    
-      </form>
-
-
-    </div>
-  </body>
+      </script>
+      <button type="submit">Registrarse</button>
+  </form>
+</div>
+</body>
 </html>
